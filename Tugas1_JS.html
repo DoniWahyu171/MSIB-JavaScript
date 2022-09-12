@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Data Pegawai</title>
+            <script language="javascript">
+
+var pegawai = "Ridwan";
+var jabatan = "manager";
+var status = "menikah";
+
+if (jabatan=='manager') {
+    gapok = 15000000;
+}else if (jabatan=='asisten_manager') {
+    gapok = 10000000;
+}else if (jabatan=='staff') {
+    gapok = 5000000;
+}else{
+    gapok = 0;
+}
+
+let tunjangan_jabatan = gapok * 0.15 ;
+let BPJS = gapok * 0.1 ;
+
+let tunjangan_keluarga = (status=='menikah') ? 0.2 * gapok : 0;
+let total_gaji = gapok + tunjangan_jabatan + tunjangan_keluarga + BPJS ;
+
+
+</script>
+<style>
+    thead {
+        background-color: #ff6600;
+        color: black;
+    }
+    th {
+        padding: 10px;
+    }
+    td {
+        text-align: center;
+        background-color: white;
+    }
+    tfoot {
+        background-color: #ff6600;
+    }
+</style>
+</head>
+<body>
+    <table align="center" border="1" cellpadding="10" cellspacing="0"
+    width="60%">
+        <thead>
+            <tr bgcolor="#00b7ff">
+                <th colspan="7">Data Pegawai</th>
+            </tr>
+            <tr>
+                <th>Nama Lengkap</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>Tunjangan Keluarga</th>
+                <th>BPJS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <script>
+                        document.write(pegawai)
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(jabatan)
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(status)
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(gapok)
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(tunjangan_jabatan)
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(tunjangan_keluarga)
+                    </script>
+                </td>
+                <td>
+                    <script>
+                        document.write(BPJS)
+                    </script>
+                </td>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                    Total Gaji
+                </th>
+                <th colspan="6">
+                    <script>
+                        document.write(total_gaji)
+                    </script>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
