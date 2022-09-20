@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dampak Gempa</title>
+</head>
+<h3 align="center">Dampak Gempa</h3>
+    <table align="center" border="1" cellpadding="10" width="50%">
+        <thead>
+            <tr bgcolor="Chartreuse">
+                <th>NO</th>
+                <th>Lokasi</th>
+                <th>Skala</th>
+                <th>Dampak</th>
+            </tr>
+        </thead>
+    <tbody id="tampil">           
+    </tbody>
+<script>
+    let tampil = document.getElementById('tampil');
+    no = 1;
+    class Gempa {
+        constructor(lokasi, skala) {
+            this.lokasi = lokasi;
+            this.skala = skala;
+
+        }
+        DampakGempa(){
+                if(this.skala <= 2) this.dampak = 'Tidak terasa';
+                else if(this.skala > 2 && this.skala <= 4) this.dampak = 'Bangunan retak-retak';
+                else if(this.skala > 4 && this.skala <= 6) this.dampak = 'Bangunan roboh';
+                else if(this.skala > 6) this.dampak = 'Bangunan roboh dan berpotensi tsunami';
+                else this.dampak = '';
+
+                return this.dampak;
+            
+        }
+       
+        infoGempa() {
+            document.write (`
+                <tr>
+                    <td>${no++}</td>
+                    <td>${this.lokasi}</td>
+                    <td>${this.skala}</td>
+                    <td>${this.DampakGempa()}</td>
+                </tr>
+            `);
+            }
+          
+
+
+    }
+    Gempa1 = new Gempa('Aceh', 2);
+    Gempa2 = new Gempa('Bandung', 3);
+    Gempa3 = new Gempa('Jakarta', 4);
+    Gempa4 = new Gempa('Surabaya', 8);
+    Gempa5 = new Gempa('Malang', 2);
+    Gempa6 = new Gempa('Sumatra', 3);
+    Gempa7 = new Gempa('Kalimantan', 5);
+    Gempa8 = new Gempa('Bekasi', 7);
+    Gempa9 = new Gempa('Jogja', 2);
+    Gempa10 = new Gempa('Sulawesi', 6);
+    Gempa1.infoGempa(); Gempa2.infoGempa();
+    Gempa3.infoGempa(); Gempa4.infoGempa();
+    Gempa5.infoGempa(); Gempa6.infoGempa();
+    Gempa7.infoGempa(); Gempa8.infoGempa();
+    Gempa9.infoGempa(); Gempa10.infoGempa();
+</script>
+
+</body>
+</table>
+</html>
+    
